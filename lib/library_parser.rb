@@ -1,5 +1,3 @@
-require 'pry'
-
 class LibraryParser
   def files
     data_path = File.join(File.dirname(__FILE__), '..', 'db', 'data')
@@ -7,7 +5,6 @@ class LibraryParser
   end
 
   def self.parse
-    binding.pry
     self.new.call
   end
 

@@ -20,7 +20,8 @@ class SongsController < ApplicationController
      @song.genre_ids = params[:genres]
      @song.save
 
-     erb :'songs/show', locals: {message: "Successfully created song."}
+     flash[:message] = "Successfully created song."
+     redirect to("/songs/#{@song.slug}")
    end
  #
  #   get '/songs/:slug/edit' do
